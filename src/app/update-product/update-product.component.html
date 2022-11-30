@@ -1,22 +1,22 @@
 <div class="container mt-3 col-md-6 offset-md-3" >
 
-  <form [formGroup]="productFormGroup" (ngSubmit)="handleUpdateProduct()">
+  <form [formGroup]="updateProductForm">
     <div class="mb-3">
       <label class="form-label">Name</label>
       <input type="text" formControlName="name" class="form-control">
-      <small *ngIf="productFormGroup.controls['name'].errors && productFormGroup.controls['name'].touched" class="text-danger">
-        {{getErrorMessage('Name',productFormGroup.controls['name'].errors)}}</small>
+      <small *ngIf="updateProductForm.controls['name'].errors && updateProductForm.controls['name'].touched" class="text-danger">
+        {{getErrorMessage('Name',updateProductForm.controls['name'].errors)}}</small>
     </div>
     <div class="mb-3">
       <label class="form-label">Price</label>
       <input type="text" formControlName="price" class="form-control">
-      <small *ngIf="productFormGroup.controls['price'].errors && productFormGroup.controls['price'].touched" class="text-danger">
-        {{getErrorMessage('Price',productFormGroup.controls['price'].errors)}}</small>
+      <small *ngIf="updateProductForm.controls['price'].errors && updateProductForm.controls['price'].touched" class="text-danger">
+        {{getErrorMessage('Price',updateProductForm.controls['price'].errors)}}</small>
     </div>
     <div class="mb-3">
       <label class="form-label">Promotion</label>
       <input type="checkbox" formControlName="promotion" class="form-check">
     </div>
-    <button [disabled]=productFormGroup.invalid class="btn-info">Save</button>
+    <button [disabled]=updateProductForm.invalid class="btn-info" (click)="handleUpdateProduct()">Save</button>
   </form>
 </div>

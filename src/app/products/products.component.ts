@@ -98,7 +98,5 @@ this.productService.searchProducts(keyword,this.currentPage,this.pageSize).subsc
        this.handleSearchProducts();
 
   }
-  handleUpdateProduct(p: Product) {
-    this.router.navigate(['updateProduct',p]);
-  }
+
 }
