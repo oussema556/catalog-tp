@@ -64,4 +64,8 @@ private products!:Array<Product>;
     return of(product);
 
   }
+  public updateProduct(product: Product): Observable<Product>{
+    this.products.push(product);
+    return of(product);
+  }
 }

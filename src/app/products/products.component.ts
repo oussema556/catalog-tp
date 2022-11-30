@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from "../services/product.service";
 import {Product} from "../model/product.model";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-products',
@@ -20,7 +21,7 @@ export class ProductsComponent implements OnInit {
 
 
 
-   constructor(private productService: ProductService, private fb: FormBuilder ) {
+   constructor(private productService: ProductService, private fb: FormBuilder,private router: Router ) {
 
   }
 
@@ -97,9 +98,7 @@ this.productService.searchProducts(keyword,this.currentPage,this.pageSize).subsc
        this.handleSearchProducts();
 
   }
-
-
   handleUpdateProduct(p: Product) {
-    
+    this.router.navigate(['updateProduct',p]);
   }
 }
